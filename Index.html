@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glasgow Coma Scale (GCS)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #e9f7ef;
+      font-weight: bold;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Glasgow Coma Scale (GCS)</h1>
+    
+    <label for="eye">Eye Opening Response</label>
+    <select id="eye">
+      <option value="4">4 - Spontaneous</option>
+      <option value="3">3 - To speech</option>
+      <option value="2">2 - To pain</option>
+      <option value="1">1 - No response</option>
+    </select>
+
+    <label for="verbal">Verbal Response</label>
+    <select id="verbal">
+      <option value="5">5 - Oriented</option>
+      <option value="4">4 - Confused</option>
+      <option value="3">3 - Inappropriate words</option>
+      <option value="2">2 - Incomprehensible sounds</option>
+      <option value="1">1 - No response</option>
+    </select>
+
+    <label for="motor">Motor Response</label>
+    <select id="motor">
+      <option value="6">6 - Obeys commands</option>
+      <option value="5">5 - Localizes pain</option>
+      <option value="4">4 - Withdraws from pain</option>
+      <option value="3">3 - Abnormal flexion (decorticate)</option>
+      <option value="2">2 - Extension to pain (decerebrate)</option>
+      <option value="1">1 - No response</option>
+    </select>
+
+    <button onclick="calculateGCS()">Calculate GCS Score</button>
+
+    <div id="result" class="result" style="display:none;"></div>
+  </div>
+
+  <script>
+    function calculateGCS() {
+      const eye = parseInt(document.getElementById("eye").value);
+      const verbal = parseInt(document.getElementById("verbal").value);
+      const motor = parseInt(document.getElementById("motor").value);
+
+      const total = eye + verbal + motor;
+      let interpretation = "";
+
+      if (total >= 13) {
+        interpretation = "Mild brain injury";
+      } else if (total >= 9) {
+        interpretation = "Moderate brain injury";
+      } else {
+        interpretation = "Severe brain injury";
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = `Total GCS Score: <strong>${total}</strong><br>Interpretation: <strong>${interpretation}</strong>`;
+    }
+  </script>
+</body>
+</html>
