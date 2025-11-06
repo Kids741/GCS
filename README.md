@@ -2,7 +2,7 @@
 
 A simple web-based Glasgow Coma Scale (GCS) calculator built using HTML, CSS, and JavaScript.
 
-## 🧠 What is GCS?
+## What is GCS?
 
 The Glasgow Coma Scale is a clinical tool used to assess a patient's level of consciousness after a brain injury. It evaluates three components:
 - **Eye Opening Response (E)**
@@ -14,21 +14,21 @@ The total score helps categorize brain injuries into:
 - **Moderate (9–12)**
 - **Mild (13–15)**
 
-## 🚀 Features
+## Features
 
 - Interactive dropdowns for selecting Eye, Verbal, and Motor responses
 - Instant GCS score calculation
 - Automatic interpretation (mild, moderate, or severe brain injury)
 - Clean, mobile-friendly UI
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
 - Vanilla JavaScript
 
 
-## 📁 Project Structure
+## Project Structure
 gcs-calculator/
 ├── index.html
 └── README.md
@@ -41,18 +41,18 @@ gcs-calculator/
 3. Select the appropriate GCS responses.
 4. View the total score and interpretation.
 
-## 🧑‍⚕️ Use Case
+##  Use Case
 
 Useful for:
 - Medical students
 - Emergency and trauma units
 - Clinicians assessing patient consciousness
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-## ✨ Author
+## Author
 
 Dennis Kidake – [@Kids741](https://github.com/Kids741)
 
